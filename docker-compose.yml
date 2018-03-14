@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  proxy:
+    build: .
+    command: bash -c "ls -a && make all && ./proxy_server"
+    volumes:
+      - "./src:/src"
+      - "./logs:/var/log/erss"
+    ports:
+      - "9000:9000"
+    tty: true

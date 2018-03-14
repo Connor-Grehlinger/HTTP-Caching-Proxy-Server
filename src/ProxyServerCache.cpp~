@@ -1,0 +1,19 @@
+#include "ProxyServerCache.h"
+#include "Poco/UniqueExpireCache.h"
+#include "Poco/ExpirationDecorator.h"
+
+
+using namespace Poco;
+
+class ProxyServerCache : public 
+
+
+typedef Poco::ExpirationDecorator<std::string> ExpString;
+Poco::UniqueExpireCache<int, ExpString> myCache;
+myCache.add(1, ExpString("test", 500)); // expires after 500ms
+myCache.add(2, ExpString("test", 1500)); // expires after 1500ms
+poco_assert (myCache.size() == 2);
+// 1 second passes...
+poco_assert (myCache.size() == 1);
+Poco::SharedPtr<ExpString> ptrVal = myCache.get(1);
+poco_assert (ptrVal.isNull());
