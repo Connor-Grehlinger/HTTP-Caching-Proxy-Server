@@ -1,7 +1,7 @@
 # CachingProxy
 
 This project was developed as a homework assignment for Duke Uiversity's ECE590 Robust Server Software course by Connor 
-Grehlinger and Faris Sbahi
+Grehlinger and Faris Sbahi using C++ and the Poco library.
 
 This multi-threaded proxy caches HTTP responses to GET requests according to RFC7234 standards (i.e. cached resources are not 
 served to clients unless they are considered 'fresh', and stale resources are re-validated). The proxy also provides HTTPS 
