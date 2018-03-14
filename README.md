@@ -22,3 +22,9 @@ $ sudo docker-compose up
 ```
 
 You can easily configure Firefox to use the HTTP caching proxy server:
+1) Open menu in top right corner of the Firefox browser
+2) Select "Preferences"
+3) Scroll down to the "Network Proxy" section and click the "Settings..." button 
+4) Choose "Manual proxy configuration" and enter the IT address of the machine running the HTTP Proxy Server and the port it's 
+using (port 9000 if it's from this repository and no code has been modified)
+5) You can disable local browser caching with Firefox's developer mode network settings to use only the proxy server 
